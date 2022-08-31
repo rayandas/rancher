@@ -25,7 +25,7 @@ const (
 )
 
 func Formatter(apiContext *types.APIContext, resource *types.RawResource) {
-	if err := apiContext.AccessControl.CanDo(mgmtv3.ClusterScanGroupVersionKind.Group, mgmtv3.ClusterScanResource.Name, "read", apiContext, resource.Values, apiContext.Schema); err == nil {
+	if err := apiContext.AccessControl.CanDo(mgmtv3.ClusterScanGroupVersionKind.Group, mgmtv3.ClusterScanResource.Name, "get", apiContext, resource.Values, apiContext.Schema); err == nil {
 		s, ok := resource.Values["status"]
 		if !ok {
 			return
