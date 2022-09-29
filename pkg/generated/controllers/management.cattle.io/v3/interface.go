@@ -47,7 +47,6 @@ type Interface interface {
 	ClusterAlertGroup() ClusterAlertGroupController
 	ClusterAlertRule() ClusterAlertRuleController
 	ClusterCatalog() ClusterCatalogController
-	ClusterLogging() ClusterLoggingController
 	ClusterMonitorGraph() ClusterMonitorGraphController
 	ClusterRegistrationToken() ClusterRegistrationTokenController
 	ClusterRoleTemplateBinding() ClusterRoleTemplateBindingController
@@ -90,7 +89,6 @@ type Interface interface {
 	ProjectAlertGroup() ProjectAlertGroupController
 	ProjectAlertRule() ProjectAlertRuleController
 	ProjectCatalog() ProjectCatalogController
-	ProjectLogging() ProjectLoggingController
 	ProjectMonitorGraph() ProjectMonitorGraphController
 	ProjectNetworkPolicy() ProjectNetworkPolicyController
 	ProjectRoleTemplateBinding() ProjectRoleTemplateBindingController
@@ -170,9 +168,6 @@ func (c *version) ClusterAlertRule() ClusterAlertRuleController {
 }
 func (c *version) ClusterCatalog() ClusterCatalogController {
 	return NewClusterCatalogController(schema.GroupVersionKind{Group: "management.cattle.io", Version: "v3", Kind: "ClusterCatalog"}, "clustercatalogs", true, c.controllerFactory)
-}
-func (c *version) ClusterLogging() ClusterLoggingController {
-	return NewClusterLoggingController(schema.GroupVersionKind{Group: "management.cattle.io", Version: "v3", Kind: "ClusterLogging"}, "clusterloggings", true, c.controllerFactory)
 }
 func (c *version) ClusterMonitorGraph() ClusterMonitorGraphController {
 	return NewClusterMonitorGraphController(schema.GroupVersionKind{Group: "management.cattle.io", Version: "v3", Kind: "ClusterMonitorGraph"}, "clustermonitorgraphs", true, c.controllerFactory)
@@ -299,9 +294,6 @@ func (c *version) ProjectAlertRule() ProjectAlertRuleController {
 }
 func (c *version) ProjectCatalog() ProjectCatalogController {
 	return NewProjectCatalogController(schema.GroupVersionKind{Group: "management.cattle.io", Version: "v3", Kind: "ProjectCatalog"}, "projectcatalogs", true, c.controllerFactory)
-}
-func (c *version) ProjectLogging() ProjectLoggingController {
-	return NewProjectLoggingController(schema.GroupVersionKind{Group: "management.cattle.io", Version: "v3", Kind: "ProjectLogging"}, "projectloggings", true, c.controllerFactory)
 }
 func (c *version) ProjectMonitorGraph() ProjectMonitorGraphController {
 	return NewProjectMonitorGraphController(schema.GroupVersionKind{Group: "management.cattle.io", Version: "v3", Kind: "ProjectMonitorGraph"}, "projectmonitorgraphs", true, c.controllerFactory)
