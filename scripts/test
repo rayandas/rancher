@@ -46,7 +46,8 @@ export TB_ORG=${TB_ORG}
 # Tell Rancher to use the recently-built Rancher cluster agent image. This image is built as part of CI and will be
 # copied to the in-cluster registry during test setup below.
 source ./scripts/version
-export CATTLE_AGENT_IMAGE="rancher/rancher-agent:${AGENT_TAG}"
+export CATTLE_AGENT_IMAGE="vardhaman123/rancher-agent:v2.8.0"
+export CATTLE_AGENT_IMAGE1="rancher/rancher-agent:${AGENT_TAG}"
 echo "Using Rancher agent image $CATTLE_AGENT_IMAGE"
 
 eval "$(grep '^ENV CATTLE_SYSTEM_AGENT' package/Dockerfile | awk '{print "export " $2 "=" $3}')"

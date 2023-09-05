@@ -45,7 +45,7 @@ const (
 func main() {
 	// Make sure a valid cluster agent image tag was provided before doing anything else. The envvar CATTLE_AGENT_IMAGE
 	// should be the image name (and tag) assigned to the cattle cluster agent image that was just built during CI.
-	agentImage := os.Getenv("CATTLE_AGENT_IMAGE")
+	agentImage := os.Getenv("CATTLE_AGENT_IMAGE1")
 	if agentImage == "" {
 		logrus.Fatal("Envvar CATTLE_AGENT_IMAGE must be set to a valid rancher-agent Docker image")
 	}

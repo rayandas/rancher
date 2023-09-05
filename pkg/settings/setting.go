@@ -371,7 +371,7 @@ func getMetadataConfig() string {
 	// branch := KDMBranch.Get()
 	data := map[string]interface{}{
 		"url":                      "https://raw.githubusercontent.com/vardhaman22/rancher-kontainer-driver-metadata/rke2-k3s-1.27/data/data.json",
-		"refresh-interval-minutes": "1440",	
+		"refresh-interval-minutes": "1440",
 	}
 	ans, err := json.Marshal(data)
 	if err != nil {
