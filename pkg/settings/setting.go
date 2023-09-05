@@ -3,7 +3,6 @@ package settings
 
 import (
 	"encoding/json"
-	"fmt"
 	"os"
 	"regexp"
 	"strconv"
@@ -369,10 +368,10 @@ func GetEnvKey(key string) string {
 }
 
 func getMetadataConfig() string {
-	branch := KDMBranch.Get()
+	// branch := KDMBranch.Get()
 	data := map[string]interface{}{
-		"url":                      fmt.Sprintf("https://releases.rancher.com/kontainer-driver-metadata/%s/data.json", branch),
-		"refresh-interval-minutes": "1440",
+		"url":                      "https://raw.githubusercontent.com/vardhaman22/rancher-kontainer-driver-metadata/rke2-k3s-1.27/data/data.json",
+		"refresh-interval-minutes": "1440",	
 	}
 	ans, err := json.Marshal(data)
 	if err != nil {
